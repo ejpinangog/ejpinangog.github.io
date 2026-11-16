@@ -47,6 +47,14 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Competency Matrix: skills-matrix.md
-  - Extended Resume: resume.md
+  - Extended Resume: 
+    nav:
+  - Home: index.md
+  - Competency Matrix: skills-matrix.md
+  - Resume:
+      - Lean Resume: resume.md
+      - Extended Resume: extended-resume.md
+  - Code Blueprints:
+      - Overview: code-blueprints/index.md
   - Code Blueprints:
       - Overview: code-blueprints/index.md
