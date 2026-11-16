@@ -43,4 +43,4 @@ flowchart TB
         Azure & OnPrem -->|Centralized Logs| Logs[ELK Stack / Splunk]
         Obs & Logs -->|Automated Alerting| RCA[SRE Triage & Blameless RCA]
     end
-    ```
+```
