@@ -78,8 +78,12 @@ graph LR
 graph TD
     A[Dev Commit / Merge Request] --> B[GitLab CI Pipeline Trigger]
     B --> C[Automated Testing Validation]
-    C --> D[Platform Engineer Support & Troubleshooting]
-    D --> E[Production-Ready Artifact]
+    C --> D{Environment Target?}
+    D -->|Non-Production / Staging| E[TL Review & Manual Approval]
+    D -->|Production| F[RFC / Jira Change Ticket & CAB Review]
+    E --> G[Deploy to Lower Environment]
+    F -->|Approved| H[Controlled Production Deployment]
+    F -->|Rejected| I[Re-evaluation & Adjustments]
 ```
 
 ### 5. Patch & Vulnerability Management with Ansible
@@ -100,6 +104,8 @@ graph TD
 ```
 
 ### End-to-End Platform Engineering & Delivery Lifecycle
+### End-to-End Platform Engineering & Delivery Lifecycle
+
 ```mermaid
 flowchart TD
     subgraph P1 ["1. Infrastructure Provisioning (IaC)"]
@@ -116,8 +122,8 @@ flowchart TD
 
     subgraph P3 ["3. Dev Support & CI/CD (GitLab)"]
         C1[Dev Commit / Merge Request] --> C2[GitLab CI Pipeline & Tests]
-        C2 --> C3[Platform Engineer Support & RCA]
-        C3 --> C4[Validated Release Candidate]
+        C2 --> C3[Platform Engineer Support & Troubleshooting]
+        C3 --> C4{Environment Target?}
     end
 
     subgraph P4 ["4. Security & Patching (Ansible)"]
@@ -125,9 +131,11 @@ flowchart TD
         D2 --> D3[Hardened & Audited Fleet]
     end
 
-    subgraph P5 ["5. Governance & Production Release"]
-        E1[RFC / Jira Change Ticket] --> E2{CAB Review & Approval}
-        E2 -->|Approved| E3[Zero-Downtime Production Deployment]
+    subgraph P5 ["5. Governance & Release Approvals"]
+        C4 -->|Non-Production| E1[TL Review & Manual Approval]
+        C4 -->|Production| E2[RFC / Jira Ticket & CAB Review]
+        E1 --> E3[Deploy to Staging / Lower Env]
+        E2 -->|Approved| E4[Zero-Downtime Production Deployment]
         E2 -->|Rejected| C1
     end
 
