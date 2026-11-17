@@ -1,6 +1,6 @@
 ---
 
-### 2. Matriz de Competencias Interactiva (`docs/skills-matrix.md`)
+### 2. Matriz de Competencias Interactiva
 
 Este archivo transforma tu matriz de habilidades en bloques desplegables (`??? info`) para que reclutadores y líderes técnicos puedan escanear rápido los 9 dominios y expandir la evidencia concreta cuando quieran profundizar[cite: 2].
 

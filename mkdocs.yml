@@ -1,7 +1,7 @@
-site_name: Erick Pinango | Platform & SRE Portfolio
+site_name: Erick Pinango | Portfolio
 site_url: https://ejpinangog.github.io
 site_author: Erick Pinango
-site_description: Technical Lead, SRE, DevOps & Hybrid Cloud Architecture Portfolio
+site_description: Technical Lead, SRE, DevOps, Platform & Hybrid Cloud Architecture Portfolio
 
 theme:
   name: material
