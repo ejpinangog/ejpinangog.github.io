@@ -6,7 +6,7 @@
 
 ## Executive Summary
 
-Technical Lead and Platform/SRE Engineer with **over 10 years of hands-on experience** architecting, automating, and scaling mission-critical enterprise infrastructures across **hybrid cloud environments** (Microsoft Azure, Oracle Cloud, VMware vSphere, and Nutanix HCI). Specialized in replacing manual operational toil with declarative Infrastructure as Code (IaC), immutable golden images, and zero-downtime GitOps delivery pipelines under strict financial regulatory frameworks.
+Technical Lead, SRE, DevOps and Platform Engineer with **over 10 years of experience** engineering fault-tolerant, scalable hybrid-cloud infrastructures within regulated enterprise environments. Expert in immutable infrastructure, automated Kubernetes platforms, and full-stack telemetry. Bridges deep system-level root cause analysis with proactive technical mentorship to eradicate manual toil, streamline CI/CD pipelines, and elevate engineering velocity.
 
 ### Key Production Impact
 
@@ -16,6 +16,8 @@ Technical Lead and Platform/SRE Engineer with **over 10 years of hands-on experi
 | **80% Toil Reduction** | Automated user/SSH lifecycle, SSL/TLS rotation, OS patching, and DST audits across 2,000+ servers | Ansible, Chef, PowerShell, Bash |
 | **>30% Cloud Cost Savings** | Implemented FinOps governance, automated non-prod shutdown schedules, and resource right-sizing | Microsoft Azure, Docker |
 | **>50% Fewer Repeat Incidents** | Established proactive telemetry, tuned actionable alerting, and led blameless RCA postmortems | Datadog, Prometheus, ELK, Splunk |
+| **Sub-Minute Recovery (RTO)** | Architected multi-zone high availability architectures and automated failover pipelines | VMware, Azure (Availability Zones), Nutanix |
+| **Zero-Downtime Releases** | Migrated legacy monolithic workloads to containerized architectures with continuous rolling updates | Docker, Kubernetes, ArgoCD |
 
 ---
 
@@ -43,4 +45,95 @@ flowchart TB
         Azure & OnPrem -->|Centralized Logs| Logs[ELK Stack / Splunk]
         Obs & Logs -->|Automated Alerting| RCA[SRE Triage & Blameless RCA]
     end
+```
+### 1. Infrastructure Provisioning (App, Web, Database, Monitoring)
+```mermaid
+graph TD
+    A[Terraform & Packer Code Definition] --> B[Cloud / On-Prem Provisioning]
+    B --> C[Application Servers]
+    B --> D[Web Servers]
+    B --> E[Database Clusters]
+    B --> F[Monitoring Agents Setup]
+```
+
+### 2. Server Configuration Management with Chef
+```mermaid
+graph LR
+    A[Provisioned Nodes] --> B[Chef Server / Cookbooks]
+    B --> C[Configuration Recipes Execution]
+    C --> D[Guaranteed Environment Parity]
+```
+
+### 3. Load Balancer (LB) Creation & Routing
+```mermaid
+graph LR
+    A[Network & Traffic Rules Definition] --> B[Load Balancer Provisioning]
+    B --> C[Backend Pools Association]
+    C --> D[Traffic Routing Enabled]
+```
+
+### 4. Dev Team Support & GitLab CI Deployments
+```mermaid
+graph TD
+    A[Dev Commit / Merge Request] --> B[GitLab CI Pipeline Trigger]
+    B --> C[Automated Testing Validation]
+    C --> D[Platform Engineer Support & Troubleshooting]
+    D --> E[Production-Ready Artifact]
+```
+
+### 5. Patch & Vulnerability Management with Ansible
+```mermaid
+graph LR
+    A[Vulnerability Report / Patch Schedule] --> B[Ansible Playbooks]
+    B --> C[Concurrent Fleet Execution]
+    C --> D[Compliance Validation & Audit]
+```
+
+### 6. Production Deployment with CAB Approval
+```mermaid
+graph TD
+    A[Release Candidate in Staging] --> B[RFC / Jira Change Ticket Creation]
+    B --> C[CAB Review & Approval]
+    C -->|Approved| D[Controlled Production Deployment]
+    C -->|Rejected| E[Adjustments & Re-evaluation]
+```
+
+### End-to-End Platform Engineering & Delivery Lifecycle
+
+```mermaid
+flowchart TD
+    subgraph P1 ["1. Infrastructure Provisioning (IaC)"]
+        A1[Terraform & Packer Definitions] --> A2[Hybrid Cloud / On-Prem Provisioning]
+        A2 --> A3[App & Web Tiers]
+        A2 --> A4[Database Clusters]
+        A2 --> A5[Monitoring Agents]
+    end
+
+    subgraph P2 ["2. Configuration & Networking"]
+        B1[Chef Server / Cookbooks] --> B2[Node State & Parity Enforcement]
+        B2 --> B3[Load Balancer & Backend Pools Setup]
+    end
+
+    subgraph P3 ["3. Dev Support & CI/CD (GitLab)"]
+        C1[Dev Commit / Merge Request] --> C2[GitLab CI Pipeline & Tests]
+        C2 --> C3[Platform Engineer Support & RCA]
+        C3 --> C4[Validated Release Candidate]
+    end
+
+    subgraph P4 ["4. Security & Patching (Ansible)"]
+        D1[Vulnerability & Patch Compliance] --> D2[Ansible Playbooks Execution]
+        D2 --> D3[Hardened & Audited Fleet]
+    end
+
+    subgraph P5 ["5. Governance & Production Release"]
+        E1[RFC / Jira Change Ticket] --> E2{CAB Review & Approval}
+        E2 -->|Approved| E3[Zero-Downtime Production Deployment]
+        E2 -->|Rejected| C1
+    end
+
+    %% Flujo entre fases
+    P1 --> P2
+    P2 --> P3
+    P3 --> P4
+    P4 --> P5
 ```
