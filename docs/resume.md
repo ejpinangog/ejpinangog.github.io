@@ -1,97 +1,89 @@
+# Lean Resume
+
+[📄 Download Lean Resume (PDF)](assets/Erick_Pinango_Resume.pdf){ .md-button .md-button--primary download="Erick_Pinango_Resume.pdf" }
+
 **Erick Pinango**  
-**Technical Lead | Site Reliability Engineer (SRE) | Platform & DevOps Engineer**  
-📍 Burnaby, BC, Canada • 📞 +1 (778) 798-3650 • ✉️ [ejpinangog@gmail.com](mailto:ejpinangog@gmail.com) • 💼 [LinkedIn](https://www.linkedin.com/in/ejpinangog) • 🐙 [GitHub](https://github.com/ejpinangog)
+Burnaby, BC V5H 0J9 • +17787983650 • [ejpinangog@gmail.com](mailto:ejpinangog@gmail.com) • [linkedin.com/in/erickpinango9bb49a12a](https://www.linkedin.com/in/erickpinango9bb49a12a)
 
 ---
 
-## Professional Summary
+## Summary
 
-Technical Lead, SRE, DevOps, and Platform Engineer with **over 10 years of hands-on experience** building, automating, and scaling enterprise infrastructures across hybrid cloud environments[cite: 1]. Highly organized and collaborative, bringing structure to complex distributed systems and partnering with cross-functional engineering teams to optimize continuous delivery workflows, enforce regulatory compliance, and lead critical incident responses for high-availability production environments[cite: 1].
-
----
-
-## Core Technical Competencies
-
-* **Operations & Reliability:** High Availability (HA), Disaster Recovery (DR), SLI/SLO/SLA Governance, Root Cause Analysis (RCA), Blameless Postmortems, Capacity Planning, ITIL v3 Change Management[cite: 1, 2].
-* **Automation & Infrastructure as Code:** Terraform, Packer, Ansible, Chef, Rundeck, SCCM/MECM, Bash, Python, PowerShell[cite: 1, 2].
-* **Containers & Orchestration:** Kubernetes (AKS, K8s), Docker, Docker Swarm, Helm, ArgoCD, Microservices Architecture[cite: 1, 2].
-* **Cloud & Hybrid Virtualization:** Microsoft Azure (IaaS/PaaS, VNets, Load Balancer, Application Gateway, Arc), Oracle Cloud Infrastructure (OCI), VMware vSphere (5.5/6.5), Nutanix HCI[cite: 1, 2].
-* **CI/CD & GitOps Traceability:** GitLab CI/CD, Azure DevOps (YAML & Classic Pipelines), Jenkins, Jira Webhook Integrations[cite: 1, 2].
-* **Observability & Monitoring:** Datadog, Prometheus, Grafana, Splunk, ELK Stack (Elasticsearch, Logstash, Kibana), Instana, Azure Monitor, Nagios/Icinga[cite: 1, 2].
-* **Middleware, Networking & Security:** Kong API Gateway, HAProxy, Oracle Service Bus (OSB), Oracle WebLogic (WL), SSL/TLS Lifecycle, OS Hardening, Active Directory & GPO[cite: 1, 2].
+Technical Lead, SRE, DevOps, Platform Engineer, Systems and Infrastructure Administrator with over 10 years of hands-on experience building, automating, and scaling enterprise infrastructures across hybrid cloud environments. Highly organized and collaborative, I enjoy bringing structure to complex systems and partnering with teams to drive efficiency. Proven track record of optimizing continuous delivery workflows, managing complex architectures, and leading critical incident responses to ensure high availability in fast-paced, high-demand production environments.
 
 ---
 
-## Professional Experience
+## Technical Skill
 
-### Technical Lead — Falabella Bank
-**02/2025 – Present** | *Santiago, Chile*[cite: 1]
-
-* **Hybrid Cloud & Systems Architecture:** Architected and maintained enterprise infrastructure bridging on-premises hypervisors (VMware, Nutanix) with Microsoft Azure and Oracle Cloud (OCI) via hybrid network tunnels and synchronized control planes under strict banking compliance[cite: 1].
-* **Configuration Management & Fleet Automation:** Eliminated repetitive manual provisioning across **2,000+ servers** by authoring Ansible playbooks, Chef recipes, Rundeck scheduled jobs, and ArgoCD state synchronization[cite: 1].
-* **CI/CD & Containerization:** Built multi-stage GitLab and Jenkins pipelines, container registries, Kubernetes deployment manifests, and Helm charts enabling zero-downtime production releases[cite: 1].
-* **Infrastructure as Code (IaC):** Authored modular Terraform configurations and automated immutable golden image creation with Packer for rapid, deterministic disaster recovery[cite: 1].
-* **L3/L4 Observability & Forensics:** Served as ultimate technical escalation lead during critical production incidents using Datadog, Splunk, and Nagios, executing deep log-trace forensics and automated preventive safeguards[cite: 1].
-* **Technical Mentorship:** Led engineering workshops, standardized runbooks and SOPs, and eliminated knowledge silos across cross-functional squads[cite: 1].
+* **Cloud & Infrastructure:** Microsoft Azure, Oracle Cloud (OCI), VMware, Nutanix, HP ProLiant.
+* **Containers & Orchestration:** Docker, Kubernetes (K8s), Docker Swarm, Kong.
+* **Automation & IaC:** Terraform, Packer, Ansible, Chef, Rundeck, ArgoCD, HashiCorp Vault, CyberArk.
+* **CI/CD & Version Control:** GitLab CI/CD, Bitbucket, Jenkins, Jira Integration.
+* **Observability & Monitoring:** Datadog, Prometheus, Grafana, Splunk, Instana, ELK Stack, Nagios, Icinga, VictorOps.
+* **Scripting & Systems:** Linux [RHEL/Ubuntu/CentOS, AlmaLinux], Windows Server, Bash, Python, PowerShell.
 
 ---
 
-### Site Reliability Engineer (SRE) — Falabella Bank
-**01/2024 – 01/2025** | *Santiago, Chile*[cite: 1]
+## Work Experience
 
-* **Resilience & Hybrid Operations:** Operated distributed hybrid-cloud workloads (Azure, OCI, on-premises) with redundant nodes and geo-replicated backups to uphold strict RTO/RPO targets[cite: 1].
-* **IaC & Provisioning Acceleration:** Deployed modular Terraform templates, Packer golden images, and Chef/Ansible workflows that eliminated configuration drift and compressed provisioning lead times by **99%**[cite: 1, 2].
-* **Kubernetes Platform Scaling:** Packaged legacy runtimes into Docker containers and orchestrated Kubernetes cluster policies to enable horizontal auto-scaling[cite: 1].
-* **Ticket-to-Production Traceability:** Integrated GitLab CI and Jenkins pipelines with Jira webhooks to enforce automated audit trails from task planning to production release[cite: 1].
-* **SLI/SLO Governance & Observability:** Defined service level indicators/objectives and tuned telemetry stacks (Datadog, Prometheus, Grafana, Splunk, Instana, ELK) to suppress alert fatigue and drive data-backed capacity planning[cite: 1].
-* **Incident Lifecycle & Blameless RCAs:** Led full incident triage and postmortem governance, reducing recurring critical production incidents by **>50%**[cite: 1, 2].
+### Technical Lead
+**02/2025 to Current – Falabella Bank – Santiago De Chile**
+
+* Design and maintain enterprise technological infrastructure, combining on-premise servers (VMware-Nutanix) with cloud services (Microsoft Azure and Oracle Cloud).
+* Eliminate repetitive manual provisioning by deploying intelligent automation frameworks (Ansible, Chef, Rundeck, and ArgoCD).
+* Build automated deployment pipelines using GitLab and Jenkins, standardizing containerized workloads via Docker and Kubernetes.
+* Serve as the L3/L4 technical escalation lead during critical production incidents using observability platforms like Datadog, Splunk, and Nagios.
+* Mentor engineering peers, author comprehensive technical runbooks, and champion Agile and DevOps methodologies.
+
+### Site Reliability Engineer
+**01/2024 to 01/2025 – Falabella Bank – Santiago De Chile**
+
+* Operated large-scale distributed systems across hybrid-cloud environments, ensuring high availability (HA) and disaster recovery (DR) readiness.
+* Engineered Infrastructure as Code (IaC) solutions using Terraform, Packer, and Chef to minimize configuration drift.
+* Defined and implemented SLIs, SLOs, and SLAs, leveraging data-driven metrics to optimize continuous reliability and capacity planning.
+* Led full incident lifecycles—covering triage, deep debugging, Root Cause Analysis (RCA), and blame-free postmortems.
+* Optimized alerting quality across Datadog, Prometheus, and ELK stacks to reduce alert fatigue and enhance proactive detection.
+
+### Devops & Platform Engineer
+**04/2021 to 01/2024 – Falabella Bank – Santiago De Chile**
+
+* Standardized continuous integration workflows with GitLab CI/CD and Jenkins, integrating Jira for end-to-end deployment traceability.
+* Managed successful migrations from isolated Docker architectures to production-grade Kubernetes clusters.
+* Automated OS configurations and platform consistency across environments using Chef and Ansible and custom Bash scripts.
+* Centralized telemetry, distributed tracing, and logging solutions utilizing Datadog, Prometheus, the ELK stack and Grafana.
+
+### System Engineer
+**07/2019 to 03/2021 – Kibernum Chile – Santiago De Chile**
+
+* Collaborate externally on enterprise-level migration projects (such as migrating workloads to VMware 6.5 for corporate banking clients like Falabella Financiero); Design, build, and configure scalable infrastructure utilizing Terraform, Packer, and Chef to automate server provisioning and enforce environment consistency.
+* Administer containerized microservices and service meshes using Docker Swarm and Kong, alongside enterprise middleware environments such as Oracle Service Bus (OSB) and WebLogic (WL), handling end-to-end incident troubleshooting via Jira; Manage database servers and platform runtimes to guarantee high performance and low-latency data processing.
+* Configure and administer comprehensive monitoring, logging, and alerting stacks using Kibana, Instana, Icinga, and Nagios for deep telemetry tracking; Produce meticulous technical documentation detailing system configurations, architectural mapping, and operational standard operating procedures (SOPs).
+* Evaluate system constraints and propose technically feasible engineering solutions for greenfield system designs and infrastructure expansions; Conduct thorough technical reviews and performance assessments to recommend strategic system updates, patches, or architectural refactoring.
+* Partner directly with executive leadership and cross-functional stakeholders to translate high-level business goals into precise technical requirements; Deliver second/third-line helpdesk technical assistance, execute end-user reviews for newly deployed systems, and safeguard overall platform stability, security integrity, and efficient daily operations.
+
+### Infrastructure Consultant
+**03/2019 to 06/2019 – ActiveIT Consultores – Santiago De Chile**
+
+* Specialize in virtual infrastructure administration via VMware and enterprise data protection strategies using Veeam Backup & Replication.
+* Manage and optimize mixed-OS enterprise environments running Windows Server and Linux distributions.
+* Collaborate with cross-functional teams on Disaster Recovery (DR) planning, network backup strategies, and continuous recovery process auditing.
+* Install, support, and maintain corporate hardware and software infrastructure adhering to industry best practices.
+* Analyze, troubleshoot, and enhance network performance to drive operational efficiency.
+* Lead professional team development and assist in project management coordination for infrastructure initiatives.
+
+### Infrastructure Administrator
+**08/2017 to 03/2019 – Anida Consultores – Santiago De Chile**
+
+* Deliver robust on-site infrastructure support for mission-critical services deployed on HP ProLiant DL Series servers.
+* Administer and support enterprise virtualized environments (VMware vSphere 5.5 and 6.5) alongside multi-OS operating systems (Windows Server, Linux, and ESXi).
+* Configure and manage advanced virtualization networking features and enterprise clustering topologies (VDS, VSS, VLAN, vMotion, DRS, HA, LUN, and failover clusters).
+* Architect, install, and map physical data center facilities using high-availability best practices and enterprise documentation tools.
+* Process Request for Changes (RFCs under ITIL v3 framework) and manage customer requirements and incidents using ticketing systems like AutoTask and HPSM.
 
 ---
 
-### DevOps & Platform Engineer — Falabella Bank
-**04/2021 – 01/2024** | *Santiago, Chile*[cite: 1]
+## Education & Certifications
 
-* **CI/CD Standardization:** Designed YAML-based pipelines in GitLab CI/CD and Jenkins with automated testing gates and Jira issue-key mapping[cite: 1].
-* **Multi-Environment IaC:** Provisioned **300+ servers** across Development, QA, and Production using Terraform, Packer, and Chef, maintaining full environment parity[cite: 1, 2].
-* **Container Migration:** Executed architectural migrations from standalone Docker hosts to Kubernetes clusters, decoupling applications from underlying OS dependencies[cite: 1].
-* **Cloud Migrations & Cost Governance:** Migrated on-premises workloads to Azure and implemented automated non-production lifecycle schedules, cutting cloud operational expenses by **>30%**[cite: 1, 2].
-* **Operational Tooling:** Developed Bash and PowerShell automation for access governance, SSL/TLS certificate rotation, and security audits, reducing manual toil by **80%**[cite: 1, 2].
-
----
-
-### System Engineer — Kibernum Chile (Client: Falabella Financiero)
-**07/2019 – 03/2021** | *Santiago, Chile*[cite: 1]
-
-* **Virtualization & Cloud Provisioning:** Contributed to enterprise VMware 6.5 migrations and automated multi-tier server builds using Terraform, Packer, and Chef[cite: 1].
-* **Middleware & API Gateway Operations:** Administered Docker Swarm clusters, Kong API Gateway routes, Oracle Service Bus (OSB), and WebLogic (WL) domains supporting high-transaction banking services[cite: 1].
-* **Telemetry & Architecture Assessments:** Configured Kibana, Instana, Icinga, and Nagios health checks while performing infrastructure capacity audits and technical feasibility reviews[cite: 1].
-
----
-
-### Infrastructure Consultant — ActiveIT Consultores
-**03/2019 – 06/2019** | *Santiago, Chile*[cite: 1]
-
-* Administered VMware ESXi/vCenter clusters and enterprise data protection policies using **Veeam Backup & Replication**, executing periodic DR restore drills and RTO/RPO audits[cite: 1].
-* Managed mixed Windows Server and Linux environments, network latency troubleshooting, firmware lifecycle updates, and junior engineer mentoring[cite: 1].
-
----
-
-### Infrastructure Administrator — Anida Consultores
-**08/2017 – 03/2019** | *Santiago, Chile*[cite: 1]
-
-* Administered on-premises HP ProLiant DL hardware and **VMware vSphere 5.5/6.5** clusters (VDS, VLANs, vMotion, DRS, HA, multi-path storage LUNs), executing P2V and V2V migrations[cite: 1].
-* Authored data center physical topologies in Microsoft Visio and managed ITIL v3 Request for Changes (RFCs) and SLA escalations via AutoTask and HPSM[cite: 1].
-
----
-
-## Certifications & Education
-
-* **Microsoft Certified: Azure Fundamentals (AZ-900)** — Microsoft (2026)[cite: 1]
-* **AWS Certified Cloud Practitioner (CLF-C02)** — Amazon Web Services (2024)[cite: 1]
-* **Bachelor's Degree in Information Technology** — Rodolfo Loero Arismendi University Technical Industrial Institute (IUTIRLA), Caracas, Venezuela[cite: 1, 2]
-"""
-
-with open("docs/resume.md", "w", encoding="utf-8") as f:
-    f.write(content)
-print("docs/resume.md listo")
-PY
+* **Rodolfo Loero Arismendi University Technical Industrial Institute**, 03/2010 – Caracas Venezuela — Bachelor's degree, Information Technology
+* **Microsoft Certified: Azure Fundamentals 2026**
+* **AWS Certified Cloud Practitioner 2024**

@@ -1,6 +1,6 @@
 # Extended Resume
 
-[:material-file-pdf-box: Download Extended Resume (PDF)](assets/Erick_Pinango_Extended_Resume.pdf){ .md-button .md-button--primary download="Erick_Pinango_Extended_Resume.pdf" }
+[📄 Download Extended Resume (PDF)](assets/Erick_Pinango_Extended_Resume.pdf){ .md-button .md-button--primary download="Erick_Pinango_Extended_Resume.pdf" }
 
 **Erick Pinango**  
 Burnaby, BC V5H 0J9 • +17787983650 • [ejpinangog@gmail.com](mailto:ejpinangog@gmail.com) • [linkedin.com/in/erickpinango9bb49a12a](https://www.linkedin.com/in/erickpinango9bb49a12a)
