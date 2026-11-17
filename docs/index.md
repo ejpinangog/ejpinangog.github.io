@@ -104,7 +104,6 @@ graph TD
 ```
 
 ### End-to-End Platform Engineering & Delivery Lifecycle
-### End-to-End Platform Engineering & Delivery Lifecycle
 
 ```mermaid
 flowchart TD
@@ -120,9 +119,9 @@ flowchart TD
         B2 --> B3[Load Balancer & Backend Pools Setup]
     end
 
-    subgraph P3 ["3. Dev Support & CI/CD (GitLab)"]
-        C1[Dev Commit / Merge Request] --> C2[GitLab CI Pipeline & Tests]
-        C2 --> C3[Platform Engineer Support & Troubleshooting]
+    subgraph P3 ["3. Jira-Driven CI/CD & Dev Support (GitLab)"]
+        C1[Jira Ticket Creation & Dev Commit] --> C2[GitLab CI Pipeline & Automated Tests]
+        C2 --> C3[GitLab Approval Workflow & Review]
         C3 --> C4{Environment Target?}
     end
 
@@ -131,10 +130,10 @@ flowchart TD
         D2 --> D3[Hardened & Audited Fleet]
     end
 
-    subgraph P5 ["5. Governance & Release Approvals"]
-        C4 -->|Non-Production| E1[TL Review & Manual Approval]
-        C4 -->|Production| E2[RFC / Jira Ticket & CAB Review]
-        E1 --> E3[Deploy to Staging / Lower Env]
+    subgraph P5 ["5. Governance & Release Execution"]
+        C4 -->|Non-Production / Staging| E1[TL Ticket Approval & Manual Deploy Trigger]
+        C4 -->|Production| E2[CAB Review & Change Approval]
+        E1 --> E3[Deployment to Lower Environment]
         E2 -->|Approved| E4[Zero-Downtime Production Deployment]
         E2 -->|Rejected| C1
     end
@@ -144,4 +143,3 @@ flowchart TD
     P2 --> P3
     P3 --> P4
     P4 --> P5
-```
