@@ -15,11 +15,13 @@ Technical Lead, SRE, DevOps, Platform Engineer, Systems and Infrastructure Admin
 
 | Domain | Focus Area |
 | :--- | :--- |
-| **Operations & Reliability** | Automation & Infrastructure |
-| **Systems Administration** | Containers & Platforms |
-| **Cloud & Networking** | Monitoring & Observability |
-| **Security & Compliance** | Middleware & Integration |
-| **Collaboration & Processes** | Enterprise Governance & Delivery |
+| **Operations & Reliability:** | High Availability (HA), Disaster Recovery (DR), SLI/SLO/SLA Governance, Root Cause Analysis (RCA), Blameless Postmortems, Capacity Planning, ITIL v3 Change Management |
+| **Automation & Infrastructure as Code:** | Terraform, Packer, Ansible, Chef, Rundeck, SCCM/MECM, Bash, Python, PowerShell |
+| **Containers & Orchestration:** | Kubernetes (AKS, K8s), Docker, Docker Swarm, Helm, ArgoCD, Microservices Architecture |
+| **Cloud & Hybrid Virtualization:** | Microsoft Azure (IaaS/PaaS, VNets, Load Balancer, Application Gateway, Arc), Oracle Cloud Infrastructure (OCI), VMware vSphere (5.5/6.5), Nutanix HCI |
+| **CI/CD & GitOps Traceability:** | GitLab CI/CD, Azure DevOps (YAML & Classic Pipelines), Jenkins, Jira Webhook Integrations |
+| **Observability & Monitoring:** |Datadog, Prometheus, Grafana, Splunk, ELK Stack (Elasticsearch, Logstash, Kibana), Instana, Azure Monitor, Nagios, Icinga |
+| **Middleware, Networking & Security:** | Kong API Gateway, HAProxy, Oracle Service Bus (OSB), Oracle WebLogic (WL), SSL/TLS Lifecycle, OS Hardening, Active Directory & GPO |
 
 ---
 

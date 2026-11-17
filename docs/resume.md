@@ -1,6 +1,3 @@
-python3 - << 'PY'
-content = """# Extended Curriculum Vitae
-
 **Erick Pinango**  
 **Technical Lead | Site Reliability Engineer (SRE) | Platform & DevOps Engineer**  
 📍 Burnaby, BC, Canada • 📞 +1 (778) 798-3650 • ✉️ [ejpinangog@gmail.com](mailto:ejpinangog@gmail.com) • 💼 [LinkedIn](https://www.linkedin.com/in/ejpinangog) • 🐙 [GitHub](https://github.com/ejpinangog)
