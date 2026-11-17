@@ -46,6 +46,7 @@ flowchart TB
         Obs & Logs -->|Automated Alerting| RCA[SRE Triage & Blameless RCA]
     end
 ```
+
 ### 1. Infrastructure Provisioning (App, Web, Database, Monitoring)
 ```mermaid
 graph TD
@@ -99,7 +100,6 @@ graph TD
 ```
 
 ### End-to-End Platform Engineering & Delivery Lifecycle
-
 ```mermaid
 flowchart TD
     subgraph P1 ["1. Infrastructure Provisioning (IaC)"]
