@@ -71,17 +71,17 @@ flowchart TD
     C1 --> APP[APP: OSB, WebLogic, Docker,<br/>Swarm, K8s & Microservices]
     APP --> WEB[WEB: Kong API Gateway]
     WEB --> DB[DB: SQL & Oracle]
-    DB --> MON[Monitoring: Datadog, Prometheus, Grafana, Nagios, Instana, Icinga]
+    DB --> MON[Monitoring: Datadog, Prometheus,<br/>Grafana, Nagios,<br/>Instana, Icinga]
 
-    P2 --> N1[VNets / VCNs, Subnets & Peering]
-    P2 --> N2[Load Balancers, WAF & API Gateways]
-    P2 --> N3[Private DNS & Hybrid VPN / ExpressRoute]
+    P2 --> N1[VNets / VCNs, Subnets &<br/>Peering]
+    P2 --> N2[Load Balancers, WAF &<br/>API Gateways]
+    P2 --> N3[Private DNS &<br/>Hybrid VPN / ExpressRoute]
 
-    P3 --> D1[Database Clusters & Read Replicas]
-    P3 --> D2[Managed Disks, Block Volumes, LUNs & Backups]
+    P3 --> D1[Database Clusters &<br/>Read Replicas]
+    P3 --> D2[Managed Disks, Block Volumes,<br/>LUNs & Backups]
 
-    P4 --> S1[NSGs / Security Lists, Key Vault / Vault & IAM]
-    P4 --> S2[Monitoring Servers & Telemetry Agents]
+    P4 --> S1[NSGs / Security Lists, Key Vault /<br/>Vault & IAM]
+    P4 --> S2[Monitoring Servers &<br/>Telemetry Agents]
 ```
 
 ### 2. Server Configuration Management with Chef
