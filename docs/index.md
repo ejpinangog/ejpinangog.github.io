@@ -23,6 +23,7 @@ Technical Lead, SRE, DevOps and Platform Engineer with **over 10 years of experi
 
 ## Hybrid Cloud & GitOps Reference Architecture
 
+```mermaid
 flowchart TD
     subgraph BaseImg ["0. Base Image Catalog"]
         PK[Packer Custom Build - One-Time] --> TPL[(VMware / Nutanix Template)]
