@@ -24,33 +24,9 @@ Technical Lead, SRE, DevOps and Platform Engineer with **over 10 years of experi
 ## Hybrid Cloud & GitOps Reference Architecture
 
 ```mermaid
-flowchart TB
-    subgraph Governance ["1. Traceability & Governance"]
-        Jira[Jira Ticket / ITIL Change] -->|Webhook Trigger| CI[GitLab CI / Azure DevOps]
-    end
-
-    subgraph Build ["2. Immutable Build & IaC"]
-        CI -->|Validate & Lint| TF[Terraform Modules]
-        CI -->|Bake Golden Image| PK[Packer: RHEL / Windows]
-    end
-
-    subgraph Deploy ["3. Hybrid Cloud & Orchestration"]
-        TF & PK -->|PR Approval Gate| Azure[Microsoft Azure: AKS, VNets, LB]
-        TF & PK -->|GitOps Sync / ArgoCD| OnPrem[On-Premises: VMware / Nutanix]
-        Ansible[Ansible & Chef] -.->|Config & Hardening| Azure & OnPrem
-    end
-
-    subgraph Observe ["4. Observability & Resilience"]
-        Azure & OnPrem -->|Metrics & Traces| Obs[Datadog / Prometheus / Grafana]
-        Azure & OnPrem -->|Centralized Logs| Logs[ELK Stack / Splunk]
-        Obs & Logs -->|Automated Alerting| RCA[SRE Triage & Blameless RCA]
-    end
-```
-
-```mermaid
 flowchart TD
     subgraph Gov ["1. Traceability & Governance"]
-        Jira[Jira Ticket / ITIL Change] -->|Webhook Trigger| CI[GitLab CI / Azure DevOps]
+        Jira[Jira Ticket / ITIL Change] -->|Webhook Trigger| CI/CD[GitLab CI]
     end
 
     subgraph OnPrem ["2A. On-Premises Provisioning (VMware & Nutanix)"]
@@ -67,7 +43,7 @@ flowchart TD
         TF2 --> Sec[Azure Key Vault & Managed Identities]
     end
 
-    subgraph Day2 ["3. Day-2 Configuration & Observability"]
+    subgraph Configuration management ["3. Configuration & Observability"]
         OnPremNodes & AzNodes --> CM[Ansible / Chef: Hardening & Agents]
         CM --> Obs[Datadog, Prometheus, Grafana & ELK/Splunk]
         Obs -->|Automated Alerting| RCA[SRE Triage & Blameless RCA]
