@@ -45,26 +45,11 @@ flowchart TD
         TF2 --> Sec[Azure: Key Vault & Managed Identities]
     end
 
-    subgraph Day2 ["3. Day-2 Configuration & Observability"]
+    subgraph Day2 ["3. Configuration & Observability"]
         OnPremNodes & AzNodes --> CM[Ansible / Chef: Hardening & Agents]
         CM --> Obs[Datadog, Prometheus, Grafana & ELK/Splunk]
         Obs -->|Automated Alerting| RCA[SRE Triage & Blameless RCA]
     end
-
-    subgraph Cloud ["2B. Cloud Provisioning (Microsoft Azure)"]
-        MKT[Azure Marketplace: AlmaLinux Image] --> TF2[Terraform azurerm]
-        CI -->|Validate & Plan| TF2
-        TF2 --> Net[VNets, NSGs & Load Balancers]
-        TF2 --> AzNodes[Azure VMs & AKS Clusters]
-        TF2 --> Sec[Azure Key Vault & Managed Identities]
-    end
-
-    subgraph Configuration management ["3. Configuration & Observability"]
-        OnPremNodes & AzNodes --> CM[Ansible / Chef: Hardening & Agents]
-        CM --> Obs[Datadog, Prometheus, Grafana & ELK/Splunk]
-        Obs -->|Automated Alerting| RCA[SRE Triage & Blameless RCA]
-    end
-```
 
 ---
 
