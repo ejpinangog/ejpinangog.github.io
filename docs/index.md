@@ -67,10 +67,10 @@ flowchart TD
     B --> P3[Data, Storage & DR]
     B --> P4[Security, IAM & Observability]
 
-    P1 --> C1[*APP:* OSB, WebLogic, Docker,<br/>Swarm, K8s & Microservices]]
-    C1 --> WEB[*WEB:* Kong API Gateway] 
-    WEB --> DB[*DB:* SQL & Oracle]
-    DB --> MON[*Monitoring:* Datadog, Prometheus,<br/>Grafana, Nagios,<br/>Instana, Icinga]
+    P1 --> C1["<b>APP:</b> OSB, WebLogic, Docker,<br/>Swarm, K8s & Microservices"]
+    C1 --> WEB["<b>WEB:</b> Kong API Gateway"]
+    WEB --> DB["<b>DB:</b> SQL & Oracle"]
+    DB --> MON["<b>Monitoring:</b> Datadog, Prometheus,<br/>Grafana, Nagios, Instana, Icinga & Agents"]
 
     P2 --> N1[VNets / VCNs, Subnets &<br/>Peering]
     P2 --> N2[Load Balancers, WAF &<br/>API Gateways]
