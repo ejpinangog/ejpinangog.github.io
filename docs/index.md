@@ -53,17 +53,7 @@ flowchart TD
 ```
 ---
 
-### 1. Infrastructure Provisioning (App, Web, Database, Monitoring)
-```mermaid
-graph TD
-    A[Terraform & Packer Code Definition] --> B[Cloud / On-Prem Provisioning]
-    B --> C[Application Servers]
-    B --> D[Web Servers]
-    B --> E[Database Clusters]
-    B --> F[Monitoring Agents Setup]
-```
-
-### 1.1 Infrastructure Provisioning
+### 1. Infrastructure Provisioning
 
 ```mermaid
 flowchart TD
@@ -77,8 +67,11 @@ flowchart TD
     B --> P3[Data, Storage & DR]
     B --> P4[Security, IAM & Observability]
 
-    P1 --> C1[App, Middleware & Web Servers]
-    P1 --> C2[Kubernetes Clusters - AKS / OKE & Registries]
+    P1 --> C1[APP, WEB, DB & Monitoring Servers]
+    C1 --> APP[APP: OSB, WebLogic, Docker, Swarm, K8s & Microservices]
+    C1 --> WEB[WEB: Kong API Gateway]
+    C1 --> DB[DB: SQL & Oracle]
+    C1 --> MON[Monitoring: Datadog, Prometheus, Grafana, Nagios, Instana, Icinga & Telemetry Agents]
 
     P2 --> N1[VNets / VCNs, Subnets & Peering]
     P2 --> N2[Load Balancers, WAF & API Gateways]
