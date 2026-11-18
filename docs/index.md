@@ -63,6 +63,34 @@ graph TD
     B --> F[Monitoring Agents Setup]
 ```
 
+### 1.1 Infrastructure Provisioning
+
+```mermaid
+flowchart TD
+    PK[Packer Golden Image - One-Time Build] -.->|VMware / Nutanix Template| TF[Terraform Infrastructure Definition]
+    CLD[Native Cloud Images: AlmaLinux on Azure & OCI] -.->|Marketplace / Platform Image| TF
+
+    TF --> B[Hybrid Cloud & On-Prem Provisioning]
+
+    B --> P1[Compute & Containers]
+    B --> P2[Networking & Edge]
+    B --> P3[Data, Storage & DR]
+    B --> P4[Security, IAM & Observability]
+
+    P1 --> C1[App, Middleware & Web Servers]
+    P1 --> C2[Kubernetes Clusters - AKS / OKE & Registries]
+
+    P2 --> N1[VNets / VCNs, Subnets & Peering]
+    P2 --> N2[Load Balancers, WAF & API Gateways]
+    P2 --> N3[Private DNS & Hybrid VPN / ExpressRoute]
+
+    P3 --> D1[Database Clusters & Read Replicas]
+    P3 --> D2[Managed Disks, Block Volumes, LUNs & Backups]
+
+    P4 --> S1[NSGs / Security Lists, Key Vault / Vault & IAM]
+    P4 --> S2[Monitoring Servers & Telemetry Agents]
+```
+
 ### 2. Server Configuration Management with Chef
 ```mermaid
 graph LR
