@@ -1,78 +1,65 @@
-# Competency & Skills Matrix
+# Technical Competency & Engineering Matrix
 
-This matrix maps core enterprise platform and cloud engineering requirements directly to verified production implementations across banking, financial services, and consulting environments.
-
----
-
-## 1. Cloud Architecture & Hybrid Migrations (Azure & On-Premises)
-
-**Core Capability:** 10+ years of infrastructure architecture and support, including 5+ years designing and migrating mission-critical workloads to Microsoft Azure and hybrid ecosystems.
-
-??? info "View Verified Production Evidence"
-    * **Hybrid Cloud Architecture (Falabella Bank):** Designed and supported hybrid cloud topologies integrating on-premises VMware/Nutanix data centers with Microsoft Azure and Oracle Cloud (OCI) via secure network tunnels and Azure Arc.
-    * **IaaS & PaaS Implementation:** Deployed high-availability compute, persistent storage, virtual networks (VNets), Application Gateways, and zone/region-redundant Azure Load Balancers (modernizing legacy on-premises HAProxy setups).
-    * **FinOps & Cost Optimization:** Reduced Azure operational expenses by **>30%** through budget alerts, resource right-sizing, and automated shutdown/startup schedules tied to Docker container deployments in Dev/QA.
-    * **Cloud Certifications:** Microsoft Certified: Azure Fundamentals (2026) and AWS Certified Cloud Practitioner (2024).
+Deep-dive technical alignment across **Platform Engineering, Site Reliability Engineering (SRE), DevOps, and Cloud Infrastructure Administration**—backed by **10+ years of production implementations** in high-availability hybrid banking and enterprise environments.
 
 ---
 
-## 2. Infrastructure as Code (IaC) & Immutable Infrastructure
+## 1. Cloud Infrastructure & Hybrid Architecture (Azure, OCI, VMware & Nutanix)
 
-**Core Capability:** Declarative provisioning and golden image pipelines to eliminate configuration drift and accelerate environment delivery.
-
-??? info "View Verified Production Evidence"
-    * **Multi-Environment Terraform Orchestration (Falabella Bank & Kibernum):** Built modular Terraform architectures integrated with GitLab CI to automate provisioning of **300+ servers** across Development, QA, and Production for omnichannel platforms.
-    * **Immutable Golden Images (Packer):** Automated OS image baking for Windows Server and Linux, reducing overall infrastructure provisioning lead times by **99%**.
-    * **State & Drift Enforcement:** Combined Terraform with Chef and Ansible to enforce deterministic host roles and eliminate manual server setup.
-
----
-
-## 3. Configuration Management & Fleet Automation
-
-**Core Capability:** Large-scale server lifecycle automation across heterogeneous Linux and Windows fleets.
-
-??? info "View Verified Production Evidence"
-    * **Ansible & Chef at Scale (Falabella Bank, Kibernum, Anida):** Authored playbooks, roles, and Chef cookbooks to standardize base OS hardening, deploy security policies, manage SSH keys/sudoers, and orchestrate scheduled middleware deployments (`.ear`/`.war` on WebLogic/OSB).
-    * **Advanced Scripting (PowerShell & Bash):** Engineered automation scripts for Active Directory/GPO governance, SSL/TLS certificate rotation, centralized log diagnostics (`/var/log`, `journalctl`, Event Viewer), and automated Daylight Saving Time (DST) patch verification—cutting manual operational tasks by **80%**.
-    * **Centralized Windows Patching:** Orchestrated monthly security compliance across Windows Server fleets using Microsoft Endpoint Configuration Manager (SCCM/MECM).
+* **Hybrid Cloud & Omnichannel Topologies (Falabella Bank & Kibernum):** Designed, deployed, and maintained hybrid architectures bridging on-premises **VMware vSphere** and **Nutanix HCI** clusters with **Microsoft Azure** and **Oracle Cloud Infrastructure (OCI)** via encrypted site-to-site network tunnels and phased replication strategies to guarantee business continuity during platform migrations.
+* **Azure IaaS, PaaS & Resiliency Engineering:** Architected single-region high-availability networks using **Azure VNets**, subnets, NSGs, **Availability Zone-redundant** compute/storage (**ZRS** Managed Disks & Blob Storage), **Azure Backup**, and **Azure Site Recovery** to meet strict RPO/RTO targets against datacenter-level failures.
+* **Hybrid Governance via Azure Arc:** Onboarded on-premises Linux and Windows Server fleets into **Azure Arc** to enforce centralized configuration compliance, inventory visibility, and governance via **Azure Policy**.
+* **Layer 4/7 Traffic Modernization:** Replaced legacy on-premises **HAProxy** topologies with **Azure Load Balancers (L4)** and **Azure Application Gateways (L7/WAF)** for scalable ingress routing and SSL termination.
+* **FinOps & Compute Optimization:** Reduced Azure infrastructure spend by **>30%** using budget alerts, telemetry-driven resource right-sizing, automated cleanup policies, and scheduled start/stop automation tied to containerized Dev/QA workloads.
+* **Certifications:** *Microsoft Certified: Azure Fundamentals* (2026) | *AWS Certified Cloud Practitioner* (2024).
 
 ---
 
-## 4. CI/CD Pipelines, Containers & GitOps Traceability
+## 2. Infrastructure as Code (IaC) & Immutable Provisioning
 
-**Core Capability:** End-to-end automated software delivery from ticket creation to production container orchestration.
-
-??? info "View Verified Production Evidence"
-    * **Ticket-to-Production Traceability (Falabella Bank & Kibernum):** Integrated Jira webhooks with GitLab CI/CD, Azure DevOps (YAML & Classic), and Jenkins to enforce automated build/test gates, approval workflows, and full audit compliance.
-    * **Containerization & Kubernetes:** Packaged legacy runtimes into multi-stage Docker images and migrated workloads to Kubernetes (K8s/AKS) and Docker Swarm with horizontal auto-scaling, Helm charts, and ArgoCD state synchronization.
-
----
-
-## 5. Enterprise Middleware, API Gateways & Complex Environments
-
-**Core Capability:** Administration and troubleshooting of high-transaction, multi-tier distributed ecosystems.
-
-??? info "View Verified Production Evidence"
-    * **API Gateways & Load Balancing:** Configured and supported Kong API Gateway, HAProxy, and Azure Load Balancer to ensure low-latency, secure traffic distribution across omnichannel banking services.
-    * **Middleware & Databases:** Administered clustered Oracle Service Bus (OSB) and Oracle WebLogic (WL) domains alongside OS-level database operations and automated backup verification (Veeam Backup & Replication).
+* **Modular Terraform at Scale (Falabella Bank & Kibernum):** Architected reusable **Terraform** modules with remote state locking to provision and manage lifecycle state across **300–500+ multi-tier nodes** (Web, App/Middleware, Database, and Monitoring) across Development, QA, and Production environments.
+* **Automated IaC Pipelines:** Integrated Terraform (`fmt`, `validate`, `plan`, and gated `apply`) into **GitLab CI/CD** pipelines to enforce declarative infrastructure changes and eliminate manual console provisioning across VMware, Nutanix, Azure, and OCI.
+* **Immutable Golden Images vs. Native Cloud Catalogs:** Built one-time hardened golden image templates using **HashiCorp Packer** for on-premises VMware/Nutanix hypervisors, while leveraging native **AlmaLinux** marketplace/platform images in Azure and OCI—cutting provisioning lead times by **99%**.
+* **Zero-Drift Post-Provisioning:** Integrated Terraform outputs directly with **Chef** and **Ansible** inventories to enforce deterministic node roles immediately after compute creation.
 
 ---
 
-## 6. Observability, Incident Management & SRE Practices
+## 3. Linux/Windows Systems Engineering & Fleet Automation
 
-**Core Capability:** Proactive monitoring, SLI/SLO definition, and L3/L4 incident leadership.
-
-??? info "View Verified Production Evidence"
-    * **Full-Stack Telemetry:** Deployed and tuned monitoring and log analytics stacks using Datadog, Prometheus, Grafana, ELK Stack, Splunk, Instana, Azure Monitor, and Nagios/Icinga.
-    * **Incident Lifecycle & RCA:** Led critical production triage and authored blameless Root Cause Analysis (RCA) postmortems, reducing recurring critical incidents by **>50%**.
-    * **Reliability Engineering:** Defined SLIs, SLOs, and SLAs to guide capacity planning and minimize Mean Time to Detection (MTTD) and Mean Time to Resolution (MTTR).
+* **Enterprise OS Administration & Performance Tuning (Falabella Bank, Kibernum, ActiveIT, Anida):** Administered mission-critical **RHEL, AlmaLinux, CentOS, Oracle Linux, Unix**, and **Windows Server** fleets—handling kernel tuning, filesystem/LVM storage expansion, CPU/memory bottleneck remediation, and strict SLA compliance.
+* **Declarative Configuration Management (Chef & Ansible):** Co-owned central **Chef** repositories (custom cookbooks/recipes) and authored modular **Ansible** playbooks/roles across **2,000+ servers** to enforce OS security baselines, manage SSH keys and `sudoers` elevation, automate Linux kernel patching, and execute zero-downtime `.ear`/`.war` deployments on WebLogic/OSB.
+* **Advanced Bash & PowerShell Automation:** Engineered production scripts for **SSL/TLS certificate lifecycle rotation**, **Active Directory/GPO** enforcement, automated **Daylight Saving Time (DST)** offset verification, and log parsing (`/var/log`, `journalctl`, Windows Event Viewer)—cutting repetitive operational toil by **80%**.
+* **Centralized Windows Patch Orchestration:** Managed monthly security patch rollouts and vulnerability remediation across Windows Server fleets using **Microsoft Endpoint Configuration Manager (MECM/SCCM)**.
+* **Pre-Decommissioning Audits & Capacity Governance:** Executed pre-decommissioning dependency audits (inspecting active sockets, systemd services, mounts, and process bindings) to prevent collateral production outages, paired with proactive capacity forecasting.
 
 ---
 
-## 7. Technical Leadership, Agile & ITIL Governance
+## 4. Kubernetes, Containers & CI/CD GitOps Pipelines
 
-**Core Capability:** Cross-functional collaboration, engineering mentorship, and audited change management.
+* **Production AKS & GitOps Architecture (Falabella Bank):** Provisioned and operated **Azure Kubernetes Service (AKS)** clusters integrated with **Azure Container Registry (ACR)** via **Managed Identities (`AcrPull` RBAC)**; built **GitLab CI/CD** pipelines to compile/push multi-stage **Docker** images and update declarative K8s manifests synchronized and self-healed by **ArgoCD**.
+* **Container Orchestration & Workload Migration:** Packaged legacy middleware and monolithic services into containerized runtimes across **Kubernetes (K8s/AKS)** and **Docker Swarm**, configuring Horizontal Pod Autoscalers (HPA), resource limits/requests, Ingress controllers, and **Helm** charts.
+* **Multi-Platform CI/CD & Artifact Governance (GitLab CI, Azure DevOps, Jenkins, Rundeck):** Authored declarative **YAML** and Classic pipelines with automated build/test validation gates, internal artifact repository management, Technical Lead approvals in lower environments, and CAB release gates in production.
+* **End-to-End Ticket Traceability:** Enforced strict audit traceability linking **Jira** requirement and change tickets to GitLab repositories and release pipelines under regulated financial compliance frameworks.
 
-??? info "View Verified Production Evidence"
-    * **Mentorship & Onboarding:** Provided technical leadership and knowledge transfer to teams of **10+ engineers**, establishing runbooks, SOPs, and architecture diagrams that cut onboarding ramp-up times by **50%**.
-    * **Agile & ITIL Execution:** Operated within Agile/Scrum sprints while enforcing ITIL change control (RFCs via Jira, AutoTask, and HPSM) to maintain strict regulatory compliance and zero-disruption production releases.
+---
+
+## 5. Edge Traffic, API Gateways, Middleware & Database Operations
+
+* **API Gateway & Load Balancing (Falabella Bank):** Deployed, tuned, and supported **Kong API Gateway** (configuring upstream targets, plugins, rate limiting, and secure edge routing) alongside **HAProxy** and **Azure Load Balancers** for high-throughput omnichannel banking traffic.
+* **Enterprise Middleware Administration (Falabella Bank & Kibernum):** Administered clustered **Oracle WebLogic (WL)** and **Oracle Service Bus (OSB)** domains—troubleshooting JVM heap/thread dumps, connection pools, JMS queues, and clustered node health.
+* **OS-Level Database Operations & Backup Verification:** Provided OS-level administration and CLI-level operational diagnostics for **Oracle** and **SQL** database servers (I/O latency, tablespace/disk saturation, listener health) alongside automated backup/restore verification using **Veeam Backup & Replication**.
+
+---
+
+## 6. Observability, Full-Stack Telemetry & SRE Incident Response
+
+* **Kubernetes & Cloud-Native Telemetry:** Deployed **Prometheus (`ServiceMonitor`)** and **Grafana** dashboards on AKS and Linux fleets to track node/pod resource saturation, HTTP request latency (**p95/p99**), and error-rate budgets.
+* **Multi-Tiered Enterprise Monitoring & Log Forensics:** Engineered and maintained specialized observability layers—**Datadog** and **Instana** for distributed APM and business transaction metrics; **Nagios** and **Icinga** for legacy/on-prem host and service checks; and **ELK Stack, Splunk, Azure Monitor, and Log Analytics** for centralized log indexing and root-cause forensics.
+* **L3 Incident Leadership, On-Call & Blameless RCA:** Participated in **24/7 technical on-call rotations**, led L2/L3 critical incident triage across distributed tiers, defined **SLIs/SLOs** to reduce **MTTD/MTTR**, and authored blameless **Root Cause Analysis (RCA)** postmortems—cutting recurring critical incidents by **>50%**.
+
+---
+
+## 7. Engineering Execution, ITIL Change Control & Technical Leadership
+
+* **Runbooks, SOPs & Reference Architecture:** Authored standardized operational runbooks, disaster recovery procedures, and architecture diagrams—cutting onboarding ramp-up times by **50%** across teams of **10+ engineers**.
+* **Regulated Change Governance:** Executed production releases within **Agile/Scrum** sprints and **ITIL** change control workflows (**Jira, AutoTask, HPSM**), partnering with InfoSec, Networking, and AppDev teams to pass internal/external compliance audits with zero unapproved drift.
