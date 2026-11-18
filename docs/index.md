@@ -47,6 +47,35 @@ flowchart TB
     end
 ```
 
+```mermaid
+flowchart TD
+    subgraph Gov ["1. Traceability & Governance"]
+        Jira[Jira Ticket / ITIL Change] -->|Webhook Trigger| CI[GitLab CI / Azure DevOps]
+    end
+
+    subgraph OnPrem ["2A. On-Premises Provisioning (VMware & Nutanix)"]
+        CI -->|Bake Golden Image| PK[Packer Custom Images]
+        PK --> TF1[Terraform vSphere / Nutanix]
+        TF1 --> OnPremNodes[App, Web, DB & Monitoring Servers]
+    end
+
+    subgraph Cloud ["2B. Cloud Provisioning (Microsoft Azure)"]
+        MKT[Azure Marketplace: AlmaLinux Image] --> TF2[Terraform azurerm]
+        CI -->|Validate & Plan| TF2
+        TF2 --> Net[VNets, NSGs & Load Balancers]
+        TF2 --> AzNodes[Azure VMs & AKS Clusters]
+        TF2 --> Sec[Azure Key Vault & Managed Identities]
+    end
+
+    subgraph Day2 ["3. Day-2 Configuration & Observability"]
+        OnPremNodes & AzNodes --> CM[Ansible / Chef: Hardening & Agents]
+        CM --> Obs[Datadog, Prometheus, Grafana & ELK/Splunk]
+        Obs -->|Automated Alerting| RCA[SRE Triage & Blameless RCA]
+    end
+```
+
+---
+
 ### 1. Infrastructure Provisioning (App, Web, Database, Monitoring)
 ```mermaid
 graph TD
