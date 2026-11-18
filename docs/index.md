@@ -50,7 +50,7 @@ flowchart TD
         CM --> Obs[Datadog, Prometheus, Grafana & ELK/Splunk]
         Obs -->|Automated Alerting| RCA[SRE Triage & Blameless RCA]
     end
-
+```
 ---
 
 ### 1. Infrastructure Provisioning (App, Web, Database, Monitoring)
@@ -109,7 +109,7 @@ graph TD
     C -->|Rejected| E[Adjustments & Re-evaluation]
 ```
 
-### End-to-End Platform Engineering & Delivery Lifecycle
+<!-- ### End-to-End Platform Engineering & Delivery Lifecycle
 
 ```mermaid
 flowchart TD
@@ -149,4 +149,4 @@ flowchart TD
     P2 --> P3
     P3 --> P4
     P4 --> P5
-```
+``` -->
