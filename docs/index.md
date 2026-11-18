@@ -51,6 +51,7 @@ flowchart TD
         Obs -->|Automated Alerting| RCA[SRE Triage & Blameless RCA]
     end
 ```
+
 ---
 
 ### 1. Infrastructure Provisioning
@@ -67,7 +68,7 @@ flowchart TD
     B --> P3[Data, Storage & DR]
     B --> P4[Security, IAM & Observability]
 
-    P1 --> C1["<b>APP:</b> OSB, WebLogic, Docker,<br/>Swarm, K8s & Microservices"]
+    P1 --> C1["<b>APP:</b> OSB, WebLogic, Docker Swarm,<br/>Microservices & K8s"]
     C1 --> WEB["<b>WEB:</b> Kong API Gateway"]
     WEB --> DB["<b>DB:</b> SQL & Oracle"]
     DB --> MON["<b>Monitoring:</b> Datadog, Prometheus,<br/>Grafana, Nagios, Instana, Icinga & Agents"]
@@ -80,7 +81,7 @@ flowchart TD
     P3 --> D2[Managed Disks, Block Volumes,<br/>LUNs & Backups]
 
     P4 --> S1[NSGs / Security Lists, Key Vault /<br/>Vault & IAM]
-    P4 --> S2[Monitoring Servers &<br/>Telemetry Agents]
+    P4 --> S2[Telemetry Agents]
 ```
 
 ### 2. Server Configuration Management with Chef
@@ -128,45 +129,3 @@ graph TD
     C -->|Approved| D[Controlled Production Deployment]
     C -->|Rejected| E[Adjustments & Re-evaluation]
 ```
-
-<!-- ### End-to-End Platform Engineering & Delivery Lifecycle
-
-```mermaid
-flowchart TD
-    subgraph P1 ["1. Infrastructure Provisioning (IaC)"]
-        A1[Terraform & Packer Definitions] --> A2[Hybrid Cloud / On-Prem Provisioning]
-        A2 --> A3[App & Web Tiers]
-        A2 --> A4[Database Clusters]
-        A2 --> A5[Monitoring Agents]
-    end
-
-    subgraph P2 ["2. Configuration & Networking"]
-        B1[Chef Server / Cookbooks] --> B2[Node State & Parity Enforcement]
-        B2 --> B3[Load Balancer & Backend Pools Setup]
-    end
-
-    subgraph P3 ["3. Jira-Driven CI/CD & Dev Support (GitLab)"]
-        C1[Jira Ticket Creation & Dev Commit] --> C2[GitLab CI Pipeline & Automated Tests]
-        C2 --> C3[GitLab Approval Workflow & Review]
-        C3 --> C4{Environment Target?}
-    end
-
-    subgraph P4 ["4. Security & Patching (Ansible)"]
-        D1[Vulnerability & Patch Compliance] --> D2[Ansible Playbooks Execution]
-        D2 --> D3[Hardened & Audited Fleet]
-    end
-
-    subgraph P5 ["5. Governance & Release Execution"]
-        C4 -->|Non-Production / Staging| E1[TL Ticket Approval & Manual Deploy Trigger]
-        C4 -->|Production| E2[CAB Review & Change Approval]
-        E1 --> E3[Deployment to Lower Environment]
-        E2 -->|Approved| E4[Zero-Downtime Production Deployment]
-        E2 -->|Rejected| C1
-    end
-
-    %% Flujo entre fases
-    P1 --> P2
-    P2 --> P3
-    P3 --> P4
-    P4 --> P5
-``` -->
