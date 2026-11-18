@@ -23,16 +23,31 @@ Technical Lead, SRE, DevOps and Platform Engineer with **over 10 years of experi
 
 ## Hybrid Cloud & GitOps Reference Architecture
 
-```mermaid
 flowchart TD
-    subgraph Gov ["1. Traceability & Governance"]
-        Jira[Jira Ticket / ITIL Change] -->|Webhook Trigger| CI/CD[GitLab CI]
+    subgraph BaseImg ["0. Base Image Catalog"]
+        PK[Packer Custom Build - One-Time] --> TPL[(VMware / Nutanix Template)]
+        MKT[(Azure Marketplace: AlmaLinux)]
     end
 
-    subgraph OnPrem ["2A. On-Premises Provisioning (VMware & Nutanix)"]
-        CI -->|Bake Golden Image| PK[Packer Custom Images]
-        PK --> TF1[Terraform vSphere / Nutanix]
-        TF1 --> OnPremNodes[App, Web, DB & Monitoring Servers]
+    subgraph Governance ["1. Requirements & CI/CD Orchestration"]
+        Jira[Jira Ticket: Requirement & Traceability] --> CI[GitLab CI/CD Repositories]
+    end
+
+    subgraph Provisioning ["2. Hybrid Infrastructure Provisioning (Terraform)"]
+        TPL -.->|Clone Template| TF1[Terraform vSphere / Nutanix]
+        MKT -.->|Base OS Image| TF2[Terraform azurerm]
+        CI -->|Plan & Apply| TF1
+        CI -->|Plan & Apply| TF2
+        TF1 --> OnPremNodes[On-Prem: Web, App, DB & Monitoring Servers]
+        TF2 --> Net[Azure: VNets, NSGs & Load Balancers]
+        TF2 --> AzNodes[Azure: VMs & AKS Clusters]
+        TF2 --> Sec[Azure: Key Vault & Managed Identities]
+    end
+
+    subgraph Day2 ["3. Day-2 Configuration & Observability"]
+        OnPremNodes & AzNodes --> CM[Ansible / Chef: Hardening & Agents]
+        CM --> Obs[Datadog, Prometheus, Grafana & ELK/Splunk]
+        Obs -->|Automated Alerting| RCA[SRE Triage & Blameless RCA]
     end
 
     subgraph Cloud ["2B. Cloud Provisioning (Microsoft Azure)"]
