@@ -85,7 +85,7 @@ Deep-dive technical alignment across **Platform Engineering, Site Reliability En
 **Technical Scope:** Operational runbooks, disaster recovery SOPs, architecture diagrams, engineering mentorship as a DevOps culture (10+ engineers), Agile/Scrum execution, and ITIL change governance.
 
 ??? info "View Verified Production Evidence"
-    **Runbooks, SOPs & Reference Architecture:** Authored standardized operational runbooks, disaster recovery procedures, and system architecture diagrams—cutting onboarding ramp-up times by **50%** across teams of **10+ engineers**.
+    * **Runbooks, SOPs & Reference Architecture:** Authored standardized operational runbooks, disaster recovery procedures, and system architecture diagrams—cutting onboarding ramp-up times by **50%** across teams of **10+ engineers**.
     * **Regulated Change Governance & CAB Leadership:** Represented platform engineering in **Change Advisory Board (CAB)** reviews and executed production releases within **Agile/Scrum** sprints and **ITIL** workflows (**Jira, AutoTask, HPSM**), enforcing validated rollback plans and zero unapproved drift across compliance audits.
     * **DevOps Culture & Cross-Silo Enablement:** Bridged operational silos across AppDev, InfoSec, Networking, and DBA teams by standardizing self-service CI/CD templates, shared observability dashboards, and automated operational workflows.
     * **Continuous Improvement & Postmortem Execution:** Facilitated technical retrospectives and blameless post-incident reviews, converting root-cause findings into prioritized **Jira** automation backlogs to permanently eliminate recurring manual toil.
