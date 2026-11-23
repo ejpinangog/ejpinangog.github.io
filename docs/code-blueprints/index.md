@@ -287,6 +287,13 @@ terraform:apply:
   rules:
     - if: $CI_COMMIT_BRANCH ==$CI_DEFAULT_BRANCH
 ```
+### Pipeline Architecture & Execution Controls
+
+* **Execution Context & State Locking (`default` / `variables`):** Targets the isolated `environments/prod` root module using `hashicorp/terraform:1.8.5` with `TF_IN_AUTOMATION=true` and `terraform init -reconfigure` against a remote state backend to prevent concurrent state corruption.
+* **Static Validation (`terraform:validate`):** Enforces canonical HCL formatting (`terraform fmt -check -recursive`) and syntax/reference integrity (`terraform validate`) on every Merge Request and default branch commit.
+* **IaC Security Gate (`terraform:security-scan`):** Runs static security analysis via `aquasec/tfsec`, blocking the pipeline on `HIGH` or `CRITICAL` misconfigurations (e.g., overly permissive CIDR rules, unencrypted storage) before plan generation.
+* **Ticket Traceability & Immutable Plan Artifacts (`terraform:plan`):** Enforces commit-level **Jira** ticket validation (`^[A-Z]+-[0-9]+`) on the default branch and exports both the binary execution plan (`tfplan.binary`) and human-readable diff (`tfplan.txt`) as 7-day auditable artifacts.
+* **Gated Production Rollout (`terraform:apply`):** Requires manual authorization (`when: manual`) under the protected `production` environment (Technical Lead / CAB sign-off) and executes strictly against the exact `tfplan.binary` artifact produced in the previous stage to eliminate plan-to-apply drift.
 
 ## 3. Hardening & Kubernetes GitOps Telemetry
 
