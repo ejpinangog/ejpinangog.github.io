@@ -366,6 +366,11 @@ terraform:apply:
             name: sshd
             state: reloaded
     ```
+### Fleet Hygiene & Hardening Controls (`Ansible` + `Rundeck`)
+
+* **Syntax-Validated SSH Hardening (`ansible.builtin.lineinfile`):** Enforces security compliance baselines across `linux_app_tiers` by disabling root login, enforcing key-based authentication, and capping `MaxAuthTries` to `3`—validating configuration syntax via `sshd -t` prior to reloading the daemon via idempotent handlers.
+* **Deterministic Time & DST Verification (`chronyc tracking`):** Audits NTP synchronization health across distributed application nodes without mutating state (`changed_when: false`), failing fast on clock drift to protect TLS handshake integrity and cross-tier log correlation.
+* **Automated Filesystem & Log Lifecycle Governance (`find` + `file`):** Continuously identifies and purges rotated/compressed middleware and **Kong** gateway logs (`*.log.*`, `*.gz`) exceeding the 14-day retention policy—eliminating disk-saturation incidents and manual operational toil when orchestrated via **Rundeck** jobs.
 
 === "AKS + Prometheus ServiceMonitor"
 
@@ -442,3 +447,8 @@ terraform:apply:
           path: /actuator/prometheus
           interval: 15s
     ```
+### Cloud-Native GitOps & Telemetry Architecture (`AKS` + `Prometheus`)
+
+* **Zero-Downtime Rolling Deployments (`Deployment` / `RollingUpdate`):** Runs 3 replicas across AKS nodes with `maxUnavailable: 0` and `maxSurge: 1`, ensuring continuous API availability during **ArgoCD**-synchronized image rollouts pulled passwordlessly from **Azure Container Registry (ACR)** via `AcrPull` Managed Identity RBAC.
+* **Resource Governance & Health Probes (`resources` / `readinessProbe` / `livenessProbe`):** Enforces deterministic CPU/memory boundaries (`250m–1000m` CPU, `512Mi–1Gi` RAM) to prevent noisy-neighbor contention while decoupling traffic routing (`/actuator/health/readiness`) from container self-healing (`/actuator/health/liveness`).
+* **Cross-Namespace Prometheus Auto-Discovery (`ServiceMonitor`):** Isolates transactional traffic (`8080`) from internal telemetry (`9090`) and configures **Prometheus Operator** (`release: prometheus-stack`) to scrape `/actuator/prometheus` every `15s` across the `banking-core` namespace for real-time `p95/p99` latency tracking and SRE alerting.
