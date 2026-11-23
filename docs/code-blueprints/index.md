@@ -242,7 +242,7 @@ terraform:validate:
     - terraform validate
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_BRANCH ==$CI_DEFAULT_BRANCH
 
 terraform:security-scan:
   stage: security
@@ -254,7 +254,7 @@ terraform:security-scan:
     - tfsec "${TF_ROOT}" --minimum-severity HIGH
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_BRANCH ==$CI_DEFAULT_BRANCH
 
 terraform:plan:
   stage: plan
@@ -273,7 +273,7 @@ terraform:plan:
       - "${TF_ROOT}/tfplan.txt"
     expire_in: 7 days
   rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_BRANCH ==$CI_DEFAULT_BRANCH
 
 terraform:apply:
   stage: apply
@@ -285,7 +285,8 @@ terraform:apply:
     name: production
   when: manual
   rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_BRANCH ==$CI_DEFAULT_BRANCH
+```
 
 ## 3. Hardening & Kubernetes GitOps Telemetry
 
