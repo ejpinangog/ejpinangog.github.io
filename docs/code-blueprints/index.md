@@ -209,6 +209,19 @@ Declarative module provisioning an Availability Zone-resilient Linux application
       - echo "Bootstrap complete for ${workload} (${environment})" > /var/log/platform-bootstrap.log
     ```
 
+### Infrastructure Architecture & Security Controls
+
+* **Remote State Governance (`terraform` / `backend "azurerm"`):** Pins Terraform (`>= 1.6.0`) and the `hashicorp/azurerm` provider (`~> 3.110`) while persisting state remotely in an isolated Azure Storage container (`rg-platform-tfstate-prod`) with native blob lease locking.
+* **Network Micro-Segmentation (`azurerm_network_security_group`):** Enforces least-privilege ingress at the NIC level—restricting application traffic (`8080/8443`) exclusively to the **Kong API Gateway** subnet CIDR and telemetry scraping (`9100`) to the **Prometheus** monitoring subnet CIDR.
+* **Hardened Compute & Availability Zone Resilience (`azurerm_linux_virtual_machine`):** Provisions a Gen2 **AlmaLinux 9** marketplace image pinned to Availability Zone `1`, backed by zone-redundant managed storage (`Premium_ZRS`) and key-based SSH authentication (`disable_password_authentication = true`).
+* **Passwordless Identity & Immutable Bootstrapping (`identity` / `custom_data`):** Attaches a `SystemAssigned` Managed Identity for zero-secret **Azure Key Vault** integration and renders a base64-encoded `cloud-init` template (`cloud-init.yaml.tftpl`) to configure time sync (`chronyd`), timezone standards, and runtime environment variables at first boot.
+
+### Immutable First-Boot Provisioning (`cloud-init.yaml.tftpl`)
+
+* **Baseline Package & SELinux Tooling (`package_update` / `packages`):** Refreshes DNF repositories on first boot and installs core operational and security utilities (`jq`, `curl`, `chrony`, and `policycoreutils-python-utils` for SELinux policy management).
+* **Environment Metadata Injection (`write_files`):** Renders Terraform variables (`${environment}`, `${workload}`) into `/etc/profile.d/platform-env.sh` (`0644`), exposing standardized runtime context to shell sessions, deployment scripts, and observability agents.
+* **Time Synchronization & Audit Trail (`runcmd`):** Enables `chronyd` and enforces deterministic timezone configuration (`America/Santiago`) to prevent TLS handshake failures and log timestamp drift across distributed tiers, logging bootstrap completion to `/var/log/platform-bootstrap.log`.
+
 ---
 
 ## 2. Ticket-Traceable Infrastructure Pipeline (GitLab CI/CD)
