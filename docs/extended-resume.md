@@ -3,7 +3,7 @@
 [📄 Download Extended_Resume (PDF)](assets/Erick_Pinango_Extended_Resume.pdf){ .md-button .md-button--primary download="Erick_Pinango_Extended_Resume" }
 
 **Erick Pinango**  
-Burnaby, BC V5H 0J9 • +17787983650 • [Portfolio](https://ejpinangog.github.io/)• [ejpinangog@gmail.com](mailto:ejpinangog@gmail.com) • [LinkedIn](https://www.linkedin.com/in/erick-johan-pinango-garcia-9bb49a12a)
+Burnaby, BC V5H 0J9 • +17787983650 • [Portfolio](https://ejpinangog.github.io/)• [ejpinangog@gmail.com](mailto:ejpinangog@gmail.com) • [LinkedIn](https://www.linkedin.com/in/erickpinango)
 
 ---
 

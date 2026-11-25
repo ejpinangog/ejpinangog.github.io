@@ -1,6 +1,6 @@
 # Erick Pinango
 **Technical Lead | Site Reliability Engineer (SRE) | Platform & DevOps Engineer**  
-📍 Burnaby, BC, Canada • [LinkedIn](https://www.linkedin.com/in/erick-johan-pinango-garcia-9bb49a12a) • [ejpinangog@gmail.com](mailto:ejpinangog@gmail.com)
+📍 Burnaby, BC, Canada • [LinkedIn](https://www.linkedin.com/in/erickpinango) • [ejpinangog@gmail.com](mailto:ejpinangog@gmail.com)
 
 ---
 
