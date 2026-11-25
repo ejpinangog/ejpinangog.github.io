@@ -432,36 +432,6 @@ terraform:apply:
 
 ---
 
-## 7. SLO-Driven SRE Alerting & Predictive Capacity Rules (PrometheusRule)
-
-```yaml
-apiVersion: monitoring.coreos.com/v1
-    kind: ServiceMonitor
-    metadata:
-      name: omnichannel-adapter-monitor
-      namespace: monitoring
-      labels:
-        release: prometheus-stack
-    spec:
-      namespaceSelector:
-        matchNames:
-          - banking-core
-      selector:
-        matchLabels:
-          app: omnichannel-gateway-adapter
-      endpoints:
-        - port: metrics
-          path: /actuator/prometheus
-          interval: 15s
-    ```
-### Cloud-Native GitOps & Telemetry Architecture (`AKS` + `Prometheus`)
-
-* **Zero-Downtime Rolling Deployments (`Deployment` / `RollingUpdate`):** Runs 3 replicas across AKS nodes with `maxUnavailable: 0` and `maxSurge: 1`, ensuring continuous API availability during **ArgoCD**-synchronized image rollouts pulled passwordlessly from **Azure Container Registry (ACR)** via `AcrPull` Managed Identity RBAC.
-* **Resource Governance & Health Probes (`resources` / `readinessProbe` / `livenessProbe`):** Enforces deterministic CPU/memory boundaries (`250m–1000m` CPU, `512Mi–1Gi` RAM) to prevent noisy-neighbor contention while decoupling traffic routing (`/actuator/health/readiness`) from container self-healing (`/actuator/health/liveness`).
-* **Cross-Namespace Prometheus Auto-Discovery (`ServiceMonitor`):** Isolates transactional traffic (`8080`) from internal telemetry (`9090`) and configures **Prometheus Operator** (`release: prometheus-stack`) to scrape `/actuator/prometheus` every `15s` across the `banking-core` namespace for real-time `p95/p99` latency tracking and SRE alerting.
-
----
-
 ## 4. Edge Traffic Governance & L7 Load Balancing (Kong + HAProxy)
 
 Declarative ingress and reverse-proxy blueprints governing east-west and north-south API traffic—enforcing JWT authentication, distributed rate limiting, TLS 1.3 termination, and active L7 health checks before requests reach middleware or containerized tiers.
