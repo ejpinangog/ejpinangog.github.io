@@ -24,15 +24,6 @@ Technical Lead, SRE, DevOps, Platform Engineer, Systems and Infrastructure Admin
 | **CI/CD & Middleware** | Delivery & Integration | GitLab CI/CD, Bitbucket, Jenkins, Jira Integration |
 | **Observability & Systems** | Monitoring & OS Administration | Datadog, Prometheus, Grafana, Splunk, Instana, ELK Stack, Nagios, Icinga, VictorOps, Linux (RHEL, Ubuntu, CentOS, AlmaLinux), Windows Server, Bash, Python, PowerShell |
 
-## Technical Skill
-
-* **Cloud & Infrastructure:** Microsoft Azure, Oracle Cloud (OCI), VMware, Nutanix, HP ProLiant.
-* **Containers & Orchestration:** Docker, Kubernetes (K8s), Docker Swarm, Kong.
-* **Automation & IaC:** Terraform, Packer, Ansible, Chef, Rundeck, ArgoCD, HashiCorp Vault, CyberArk.
-* **CI/CD & Version Control:** GitLab CI/CD, Bitbucket, Jenkins, Jira Integration.
-* **Observability & Monitoring:** Datadog, Prometheus, Grafana, Splunk, Instana, ELK Stack, Nagios, Icinga, VictorOps.
-* **Scripting & Systems:** Linux [RHEL/Ubuntu/CentOS, AlmaLinux], Windows Server, Bash, Python, PowerShell.
-
 ---
 
 ## Work Experience
