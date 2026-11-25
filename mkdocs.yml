@@ -53,3 +53,7 @@ nav:
       - Extended Resume: extended-resume.md
   - Code Blueprints:
       - Overview: code-blueprints/index.md
+extra:
+  analytics:
+    provider: google
+    property: G-1H6SX8C3DJ
