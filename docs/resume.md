@@ -13,6 +13,17 @@ Technical Lead, SRE, DevOps, Platform Engineer, Systems and Infrastructure Admin
 
 ---
 
+## Technical Skills & Core Competencies
+
+| Domain | Core Focus Area | Technologies & Platforms |
+| :--- | :--- | :--- |
+| **Cloud & Infrastructure** | Cloud & Networking | Microsoft Azure, Oracle Cloud (OCI), VMware, Nutanix, HP ProLiant |
+| **Containers & Platforms** | Containers & Orchestration | Docker, Kubernetes (K8s), Docker Swarm, Kong |
+| **Automation & Reliability** | Operations & IaC | Terraform, Packer, Ansible, Chef, Rundeck, ArgoCD |
+| **Security & Governance** | Secrets & Compliance | HashiCorp Vault, CyberArk, Enterprise Governance & Delivery |
+| **CI/CD & Middleware** | Delivery & Integration | GitLab CI/CD, Bitbucket, Jenkins, Jira Integration |
+| **Observability & Systems** | Monitoring & OS Administration | Datadog, Prometheus, Grafana, Splunk, Instana, ELK Stack, Nagios, Icinga, VictorOps, Linux (RHEL, Ubuntu, CentOS, AlmaLinux), Windows Server, Bash, Python, PowerShell |
+
 ## Technical Skill
 
 * **Cloud & Infrastructure:** Microsoft Azure, Oracle Cloud (OCI), VMware, Nutanix, HP ProLiant.
