@@ -516,7 +516,7 @@ Declarative ingress and reverse-proxy blueprints governing east-west and north-s
 
 === "HAProxy L7 Load Balancer"
 
-    ```haproxy
+    ```text
     global
         log /dev/log local0 info
         maxconn 50000
