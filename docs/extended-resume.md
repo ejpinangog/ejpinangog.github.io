@@ -3,7 +3,7 @@
 [📄 Download Extended_Resume (PDF)](assets/Erick_Pinango_Extended_Resume.pdf){ .md-button .md-button--primary download="Erick_Pinango_Extended_Resume" }
 
 **Erick Pinango**  
-Burnaby, BC V5H 0J9 • +17787983650 • [ejpinangog@gmail.com](mailto:ejpinangog@gmail.com) • [LinkedIn](https://www.linkedin.com/in/erick-johan-pinango-garcia-9bb49a12a)
+Burnaby, BC V5H 0J9 • +17787983650 • [Portfolio](https://ejpinangog.github.io/)• [ejpinangog@gmail.com](mailto:ejpinangog@gmail.com) • [LinkedIn](https://www.linkedin.com/in/erick-johan-pinango-garcia-9bb49a12a)
 
 ---
 
@@ -266,5 +266,5 @@ Technical Lead, SRE, DevOps, Platform Engineer, Systems and Infrastructure Admin
 
 ## Certifications
 
-* **Microsoft Certified: Azure Fundamentals 2026**
-* **AWS Certified Cloud Practitioner 2024**
+* **Microsoft Certified: Azure Fundamentals 2026:** [Validation](https://learn.microsoft.com/en-us/users/erickpiango-3494/credentials/48a0ac288ab2c44d?ref=https%3A%2F%2Fwww.linkedin.com%2F)
+* **AWS Certified Cloud Practitioner 2024** [Validation](https://cp.certmetrics.com/amazon/en/public/verify/credential/477bb858d6594d46a146a3bb48ad0706)
