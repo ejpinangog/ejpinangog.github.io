@@ -726,3 +726,30 @@ spec:
             description: "Linear trend analysis indicates {{ $labels.mountpoint }} will reach 0 bytes available within 4 hours; trigger Rundeck log-hygiene job."
 
 ```
+
+## 8. AI/ML Inference Platform & GPU Workload Architecture
+
+### Architecture & Platform Flow
+
+```mermaid
+flowchart LR
+    subgraph Edge["Networking & Edge Layer"]
+        Client["AI Applications / Clients"] --> LB["HAProxy / Cloud LB"]
+        LB --> GW["Kong API Gateway<br/>(Rate Limiting & Auth)"]
+    end
+
+    subgraph Compute["Platform & Compute Layer (Kubernetes)"]
+        GW --> Ingress["Inference Service Mesh"]
+        Ingress --> Pod1["LLM / Inference Pods<br/>(vLLM / Triton)"]
+        Ingress --> Pod2["Embedding / API Pods"]
+        Pod1 -.->|Scheduled on| GPU["GPU Worker Node Pool<br/>(NVIDIA Taints & Tolerations)"]
+    end
+
+    subgraph Storage["Data & Model Layer"]
+        Registry[("Model Registry &<br/>Object Storage (S3/Blob)")] -->|Init Container Pull| Pod1
+    end
+
+    subgraph Ops["GitOps & Observability"]
+        Argo["ArgoCD GitOps"] -.->|Syncs Manifests| Compute
+        Pod1 -->|Metrics / DCGM| Prom["Prometheus & Grafana<br/>(Latency p95 & GPU Util)"]
+    end
