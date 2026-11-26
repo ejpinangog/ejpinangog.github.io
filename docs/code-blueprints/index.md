@@ -753,3 +753,5 @@ flowchart LR
         Argo["ArgoCD GitOps"] -.->|Syncs Manifests| Compute
         Pod1 -->|Metrics / DCGM| Prom["Prometheus & Grafana<br/>(Latency p95 & GPU Util)"]
     end
+    
+```
